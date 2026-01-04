@@ -34,7 +34,7 @@ There are four API:
 
 ➢ There are three folders:
 
-• **Static**: It contains all the images, pdf (books). 
+• **Static**: It contains all the images, pdf (books).(Contains a dummy text file to help with uploading the project.)  
 
 • **Templates**: It contains all the html templates used. 
 
