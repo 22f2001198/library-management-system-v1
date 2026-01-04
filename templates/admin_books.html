@@ -1,0 +1,30 @@
+{% extends 'admin_layout.html' %}
+{% block title %}Admin Profile{% endblock %}
+{% block content %}
+<h1>All Books</h1>
+<table class="table table-bordered" border="2px" border-color="black">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Author</th>
+        <th>Genre ID</th>
+        <th>Price</th>
+        <th>Available</th>
+        <th>Actions</th>
+    </tr>
+    {% for x in books %}
+    <tr>
+        <td><a href="book/{{ x.book_id }}">{{ x.book_id }}</a></td>
+        <td>{{ x.name }}</td>
+        <td>{{ x.author }}</td>
+        <td><a href="/section/{{ x.genre_id }}">{{ x.genre_id }}</a></td>
+        <td><span>&#8377</span>{{ x.price }}</td>
+        <td>{{ x.available }}</td>
+        <td><a href="/book/{{x.book_id}}/edit" class="btn btn-primary" role="button">Edit</a><a href="/book/{{x.book_id}}/delete" class="btn btn-danger" role="button">Delete</a></td>
+    </tr>
+    {% endfor %}
+</table>
+<a href="/book/add" class="btn btn-success" role="button">+Add new Book</a>
+<br>
+<br>
+{% endblock %}

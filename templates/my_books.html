@@ -1,0 +1,54 @@
+{% extends 'user_layout.html' %}
+{% block title %}My Books{% endblock %}
+{% block content %}
+<h1>My Books</h1>
+<div class="grid-container">
+    {% for x in result %}
+    <div class="thumbnail">
+        <img src="/static/{{x.Books.imgname}}" alt="Book1">
+        {{ x.Books.name }} <br>
+        by {{ x.Books.author }} <br>
+        <a href="/book/{{ x.Books.book_id }}/{{ x.Issued.issue_id }}/read" class="btn btn-primary" role="button">Read</a>
+        <a href="/my_books/{{ x.Issued.book_id }}/return" class="btn btn-danger" role="button">Return</a>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}
+{% block style %}
+<style>
+    .button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px 0;
+            font-size: 16px;
+            text-align: center;
+            text-decoration: none;
+            background-color: #007BFF;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            background-color: #0056b3;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 10px;
+        }
+
+        .thumbnail {
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .thumbnail img {
+            width: 100%;
+            height: auto;
+        }
+</style>
+{% endblock %}

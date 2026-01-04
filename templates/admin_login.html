@@ -1,0 +1,15 @@
+{% extends "auth_layout.html" %}
+{% block title %}Admin Login{% endblock %}
+{% block content %}
+      <form method="post" action="/admin_login">
+        <div class="mb-3">
+          <label for="admin_name" class="form-label">Admin Name*</label>
+          <input type="admin_name" class="form-control" id="admin"name="admin" placeholder="Enter the admin name" />
+        </div>
+        <div class="mb-3">
+          <label for="password" class="form-label">Password*</label>
+          <input type="password" class="form-control" id="password" name="password" placeholder="Enter the password" />
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+{% endblock %}

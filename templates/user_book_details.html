@@ -1,0 +1,28 @@
+{% extends 'user_layout.html' %}
+{% block title %}Book {{ book.book_id }}{% endblock %}
+{% block content %}
+<h1>Book : {{ book.name }}</h1>
+<img src="/static/{{ book.imgname }}" alt="book thumbnail" style="width: 30%; height:500px;">
+<h3>Book ID:</h3>
+<p>{{ book.book_id }}</p>
+<h3>Book Name:</h3>
+<p>{{ book.name }}</p>
+<h3>Author Name:</h3>
+<p>{{ book.author }}</p>
+<h3>Genre:</h3>
+<p>{{ book.name }}</p>
+<h3>Content:</h3>
+<p>{{ book.content }}</p>
+<h3>Price:</h3>
+<p><span>&#8377</span>{{ book.price }}</p>
+<h3>Read Book:</h3>
+<div>
+    <h6>This service is paid. Please pay to proceed.</h6>
+    <a href="/book/{{ book.book_id }}/payment" class="btn btn-success" role="button">Pay for {{ book.name }}</a>
+</div>
+{% if book.available == True %}
+    <p style="color: green;">Available</p>
+{% else %}
+    <p style="color: red;">Not Available</p>
+{% endif %}
+{% endblock %}
