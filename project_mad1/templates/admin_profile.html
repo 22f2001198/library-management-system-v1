@@ -1,0 +1,15 @@
+{% extends 'admin_layout.html' %}
+{% block title %}Admin {{ admin.admin_id }}{% endblock %}
+{% block content %}
+<h1>Admin: {{ admin.admin_name }}</h1>
+<h3>User ID:</h3>
+<p>{{ admin.admin_id }}</p>
+<h3>User Name:</h3>
+<p>{{ admin.admin_name }}</p>
+<h3>Name:</h3>
+<p>{{ admin.name }}</p>
+<h3>Email:</h3>
+<p>{{ admin.email }}</p>
+<a href="/edit_admin_profile" class="btn btn-primary" role="button">Edit</a>
+<a href="/admin_page" class="btn btn-danger" role="button">Go Back</a>
+{% endblock %}
